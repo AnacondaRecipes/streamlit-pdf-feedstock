@@ -1,0 +1,52 @@
+{% set name = "streamlit-pdf" %}
+{% set version = "1.0.7" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_')}}-{{ version }}.tar.gz
+  sha256: 8405e86dfc9072f93c6aa1293579f917f0e13bd7848ea60b1dcb74b5fc75e23d
+
+build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: True  # [py<39]
+
+requirements:
+  host:
+    - pip
+    - python
+    - wheel
+    - setuptools >=61
+  run:
+    - python
+  run_constrained:
+    - streamlit >=1.28.0
+
+test:
+  imports:
+    - streamlit_pdf
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://streamlit.io
+  summary: A Streamlit component for viewing PDF files
+  license: BSD-3-Clause AND Apache-2.0
+  license_family: Other
+  license_file:
+    - LICENSE
+    - streamlit_pdf/frontend/build/cmaps/LICENSE
+  description: |
+    A lightweight Streamlit feature that seamlessly displays PDF files in your apps,
+    allowing for simple, responsive, and clean document viewing with minimal effort.
+  dev_url: https://github.com/streamlit/streamlit-pdf
+  doc_url: https://github.com/streamlit/streamlit-pdf/blob/main/README.md
+
+extra:
+  recipe-maintainers:
+    - snegireff
