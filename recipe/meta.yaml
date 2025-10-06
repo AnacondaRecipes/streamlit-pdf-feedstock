@@ -22,6 +22,8 @@ requirements:
     - setuptools >=61
   run:
     - python
+  run_constrained:
+    - streamlit >=1.28.0
 
 test:
   imports:
