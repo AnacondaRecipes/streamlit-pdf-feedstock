@@ -42,6 +42,7 @@ about:
   license_family: Other
   license_file:
     - LICENSE
+    - streamlit_pdf/frontend/build/cmaps/LICENSE
   description: |
     A lightweight Streamlit feature that seamlessly displays PDF files in your apps,
     allowing for simple, responsive, and clean document viewing with minimal effort.
