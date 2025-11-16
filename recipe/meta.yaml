@@ -1,5 +1,5 @@
 {% set name = "streamlit-pdf" %}
-{% set version = "1.0.8" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_')}}-{{ version }}.tar.gz
-  sha256: 4cfb4cd8713cd5988e8e3ce04eee45bb79fb6551e8be746b45977b2fada86931
+  sha256: 51911d7f4c33837f934cc2343a1c1628ee5b2d4c8751a1adbe7b3da221ff2ae0
 
 build:
   number: 0
@@ -23,7 +23,7 @@ requirements:
   run:
     - python
   run_constrained:
-    - streamlit >=1.28.0
+    - streamlit >=1.51.0
 
 # Skipped end-to-end tests, need to build frontend with npm.
 # Skipped check UI tests with Chrome browser, not all build targets support it.
