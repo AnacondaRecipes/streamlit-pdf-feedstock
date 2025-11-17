@@ -32,6 +32,7 @@ test:
     - streamlit_pdf
   commands:
     - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
   requires:
     - pip
 
@@ -42,7 +43,7 @@ about:
   license_family: Other
   license_file:
     - LICENSE
-    - streamlit_pdf/frontend/build/cmaps/LICENSE
+    - streamlit_pdf/frontend/build/assets/cmaps/LICENSE
   description: |
     A lightweight Streamlit feature that seamlessly displays PDF files in your apps,
     allowing for simple, responsive, and clean document viewing with minimal effort.
